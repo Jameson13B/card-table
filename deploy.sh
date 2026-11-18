@@ -2,8 +2,8 @@
 # Sync inventory from TCGplayer, build the image on this Pi, push it, and
 # tell ONCE to roll it out.
 #
-#   ./deploy.sh                      sync + build + push + update
-#   HOST=cards.example.com ./deploy.sh
+#   npm run deploy                   sync + build + push + update tcg.atomic10.studio
+#   HOST=other.example.com ./deploy.sh
 #
 # First time only (after a successful push):
 #   once deploy ghcr.io/jameson13b/card-table:latest \
@@ -16,7 +16,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 IMAGE="${IMAGE:-ghcr.io/jameson13b/card-table:latest}"
-HOST="${HOST:-}"
+HOST="${HOST:-tcg.atomic10.studio}"
 
 echo "→ Syncing inventory with TCGplayer"
 npm run sync

@@ -42,6 +42,12 @@ export function itemLine(item: PublicItem): string {
   return `${item.name}${bits ? ` (${bits})` : ''}: ${formatPrice(item.price)}`;
 }
 
+export function sellMailtoHref(email: string, tableName: string, message: string): string {
+  const subject = `${tableName}: I have something you’re buying`;
+  const body = `${message.trim() || 'Hi! I have:'}\n\nCondition:\nAsking (cash or trade):\n`;
+  return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
 export function mailtoHref(email: string, items: PublicItem[], tableName: string): string {
   const subject = items.length === 1 ? `${tableName}: ${items[0].name}` : `${tableName}: ${items.length} items`;
   const total = items.reduce((s, i) => s + (i.price ?? 0), 0);

@@ -1,7 +1,7 @@
 import { forwardRef, useRef, useState } from 'react';
 import type { Intent, PublicItem } from '../../shared/types.ts';
 import { formatPrice } from '../../shared/types.ts';
-import { mailtoHref, sendInquiry, subtitle, conditionLabel } from '../lib.ts';
+import { conditionLabel, mailtoHref, sellMailtoHref, sendInquiry, subtitle } from '../lib.ts';
 import { useDialog } from './useDialog.ts';
 
 /** The little stack of picked-out cards sitting at the corner of the table. */
@@ -34,11 +34,32 @@ interface DrawerProps {
   onRemove: (id: string) => void;
   onClear: () => void;
   onClose: () => void;
+  /** Opened from the Buying sign: they're selling to you, so the pile stays out of it. */
+  sell?: { message: string } | null;
 }
 
-export function PileDrawer({ items, email, tableName, onRemove, onClear, onClose }: DrawerProps) {
+export function PileDrawer({ items, email, tableName, onRemove, onClear, onClose, sell }: DrawerProps) {
   const ref = useRef<HTMLDivElement>(null);
   useDialog(ref, onClose);
+
+  if (sell) {
+    return (
+      <div className="overlay overlay-drawer" role="dialog" aria-modal="true" aria-labelledby="pile-title" ref={ref}>
+        <div className="overlay-backdrop" onClick={onClose} />
+        <aside className="drawer">
+          <header className="drawer-head">
+            <h2 id="pile-title">Sell or trade to me</h2>
+            <button type="button" className="btn-close" onClick={onClose} aria-label="Close">
+              ×
+            </button>
+          </header>
+          <p className="hint">Tell me what you’ve got, its condition, and what you’d want for it (cash or something off my table).</p>
+          <InquiryForm items={[]} email={email} tableName={tableName} onSent={() => {}} sellMessage={sell.message} />
+        </aside>
+      </div>
+    );
+  }
+
   const total = items.reduce((s, i) => s + (i.price ?? 0), 0);
   const hasOffers = items.some((i) => i.price == null);
 
@@ -89,9 +110,21 @@ export function PileDrawer({ items, email, tableName, onRemove, onClear, onClose
 
 type FormState = { kind: 'idle' } | { kind: 'sending' } | { kind: 'sent' } | { kind: 'error'; message: string };
 
-function InquiryForm({ items, email, tableName, onSent }: { items: PublicItem[]; email: string; tableName: string; onSent: () => void }) {
+interface FormProps {
+  items: PublicItem[];
+  email: string;
+  tableName: string;
+  onSent: () => void;
+  /** Set when selling to you: the intent is fixed and the message starts with this. */
+  sellMessage?: string;
+}
+
+function InquiryForm({ items, email, tableName, onSent, sellMessage }: FormProps) {
+  const selling = sellMessage != null;
   const [state, setState] = useState<FormState>({ kind: 'idle' });
-  const [intent, setIntent] = useState<Intent>('either');
+  const [intent, setIntent] = useState<Intent>(selling ? 'sell' : 'either');
+  const [message, setMessage] = useState(sellMessage ?? '');
+  const fallbackHref = selling ? sellMailtoHref(email, tableName, message) : mailtoHref(email, items, tableName);
 
   if (state.kind === 'sent') {
     return (
@@ -109,7 +142,7 @@ function InquiryForm({ items, email, tableName, onSent }: { items: PublicItem[];
     const res = await sendInquiry({
       name: String(f.get('name') ?? ''),
       contact: String(f.get('contact') ?? ''),
-      message: String(f.get('message') ?? ''),
+      message,
       website: String(f.get('website') ?? ''),
       intent,
       itemIds: items.map((i) => i.id),
@@ -124,7 +157,7 @@ function InquiryForm({ items, email, tableName, onSent }: { items: PublicItem[];
 
   return (
     <form className="inquiry" onSubmit={onSubmit}>
-      <h3>{items.length ? 'Send me your pile' : 'Send a message'}</h3>
+      <h3>{selling ? 'What have you got?' : items.length ? 'Send me your pile' : 'Send a message'}</h3>
       <label>
         Name
         <input name="name" required maxLength={80} autoComplete="name" />
@@ -133,25 +166,35 @@ function InquiryForm({ items, email, tableName, onSent }: { items: PublicItem[];
         How do I reach you?
         <input name="contact" required maxLength={120} placeholder="Email, phone or @handle" autoComplete="email" />
       </label>
-      <fieldset className="intent">
-        <legend>Looking to</legend>
-        {(['cash', 'trade', 'either'] as const).map((v) => (
-          <label key={v} className={intent === v ? 'is-on' : ''}>
-            <input type="radio" name="intent" value={v} checked={intent === v} onChange={() => setIntent(v)} />
-            {v === 'cash' ? 'Buy' : v === 'trade' ? 'Trade' : 'Either'}
-          </label>
-        ))}
-      </fieldset>
+      {!selling && (
+        <fieldset className="intent">
+          <legend>Looking to</legend>
+          {(['cash', 'trade', 'either'] as const).map((v) => (
+            <label key={v} className={intent === v ? 'is-on' : ''}>
+              <input type="radio" name="intent" value={v} checked={intent === v} onChange={() => setIntent(v)} />
+              {v === 'cash' ? 'Buy' : v === 'trade' ? 'Trade' : 'Either'}
+            </label>
+          ))}
+        </fieldset>
+      )}
       <label>
         <span>
           Message {items.length ? <span className="opt">(optional)</span> : null}
         </span>
         <textarea
           name="message"
-          rows={3}
+          rows={selling ? 4 : 3}
           maxLength={2000}
           required={!items.length}
-          placeholder={intent === 'cash' ? 'Offer, bundle ask, pickup or shipping…' : 'What you’re offering in trade…'}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder={
+            selling
+              ? 'What you have, condition, and your asking price or trade ask…'
+              : intent === 'cash'
+                ? 'Offer, bundle ask, pickup or shipping…'
+                : 'What you’re offering in trade…'
+          }
         />
       </label>
       {/* Honeypot: hidden from people, irresistible to bots. */}
@@ -163,7 +206,7 @@ function InquiryForm({ items, email, tableName, onSent }: { items: PublicItem[];
           {email && (
             <>
               {' '}
-              <a href={mailtoHref(email, items, tableName)}>Email me instead.</a>
+              <a href={fallbackHref}>Email me instead.</a>
             </>
           )}
         </p>

@@ -4,7 +4,7 @@
     "tagline": "Singles · Sealed · Trades welcome",
     "email": "jamesonb@hey.com"
   },
-  "syncedAt": "2026-11-18T18:35:12.035Z",
+  "syncedAt": "2026-11-18T23:37:15.793Z",
   "items": [
     {
       "id": "684452",
@@ -521,6 +521,134 @@
       "myPrice": 1,
       "marketPrice": 0.76,
       "lockPrice": false
+    }
+  ],
+  "wanted": [
+    {
+      "id": "w-singles-0",
+      "kind": "single",
+      "name": "Wailord - 169/159",
+      "detail": "",
+      "image": "",
+      "tcgUrl": "",
+      "note": ""
+    },
+    {
+      "id": "w-singles-1",
+      "kind": "single",
+      "name": "Xerneaas - 91/86",
+      "detail": "",
+      "image": "",
+      "tcgUrl": "",
+      "note": ""
+    },
+    {
+      "id": "w-singles-2",
+      "kind": "single",
+      "name": "Mimikyu Delta Species - SWSH136",
+      "detail": "",
+      "image": "",
+      "tcgUrl": "",
+      "note": ""
+    },
+    {
+      "id": "w-singles-3",
+      "kind": "single",
+      "name": "Snorlax Promo - SVP122",
+      "detail": "",
+      "image": "",
+      "tcgUrl": "",
+      "note": ""
+    },
+    {
+      "id": "w-singles-4",
+      "kind": "single",
+      "name": "Kingdra - TG03/TG30",
+      "detail": "",
+      "image": "",
+      "tcgUrl": "",
+      "note": ""
+    },
+    {
+      "id": "w-singles-5",
+      "kind": "single",
+      "name": "Rayquaza Promo - SWSH29",
+      "detail": "",
+      "image": "",
+      "tcgUrl": "",
+      "note": ""
+    },
+    {
+      "id": "w-singles-6",
+      "kind": "single",
+      "name": "Radiant Evee - SWSH230",
+      "detail": "",
+      "image": "",
+      "tcgUrl": "",
+      "note": ""
+    },
+    {
+      "id": "w-singles-7",
+      "kind": "single",
+      "name": "Cracked ice holos",
+      "detail": "",
+      "image": "",
+      "tcgUrl": "",
+      "note": "Select cards, let me know what you have."
+    },
+    {
+      "id": "w-sealed-0",
+      "kind": "sealed",
+      "name": "30th Celebrations",
+      "detail": "",
+      "image": "",
+      "tcgUrl": "",
+      "note": "All sealed product(no single)"
+    },
+    {
+      "id": "w-sealed-1",
+      "kind": "sealed",
+      "name": "Delta Reign",
+      "detail": "",
+      "image": "",
+      "tcgUrl": "",
+      "note": "All sealed product(no single)"
+    },
+    {
+      "id": "w-sealed-2",
+      "kind": "sealed",
+      "name": "Ascended Heroes",
+      "detail": "",
+      "image": "",
+      "tcgUrl": "",
+      "note": "Bundles, ETB, and Collection Boxes"
+    },
+    {
+      "id": "w-sealed-3",
+      "kind": "sealed",
+      "name": "Prismatic Evolutions",
+      "detail": "",
+      "image": "",
+      "tcgUrl": "",
+      "note": "Bundles, ETB, and Collection Boxes(no singles)"
+    },
+    {
+      "id": "w-sealed-4",
+      "kind": "sealed",
+      "name": "Scarlet & Violet",
+      "detail": "",
+      "image": "",
+      "tcgUrl": "",
+      "note": "All SVI sets"
+    },
+    {
+      "id": "w-sealed-5",
+      "kind": "sealed",
+      "name": "Sword and Shield",
+      "detail": "",
+      "image": "",
+      "tcgUrl": "",
+      "note": "Select SWSH sets"
     }
   ]
 }

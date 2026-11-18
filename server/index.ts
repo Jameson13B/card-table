@@ -84,6 +84,7 @@ function priceOf(item: Catalog['items'][number]): number | null {
 function publicCatalog(): PublicCatalog {
   return {
     site: catalog.site,
+    wanted: catalog.wanted ?? [],
     items: catalog.items.map((item) => {
       const { myPrice, marketPrice, lockPrice, ...rest } = item;
       return { ...rest, price: priceOf(item) };
@@ -109,7 +110,12 @@ const esc = (s: string) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const clip = (v: unknown, max: number) => String(v ?? '').trim().slice(0, max);
 
-const INTENT_LABEL: Record<Intent, string> = { cash: '💵 Buy (cash)', trade: '🔁 Trade', either: '💵/🔁 Cash or trade' };
+const INTENT_LABEL: Record<Intent, string> = {
+  cash: '💵 Buy (cash)',
+  trade: '🔁 Trade',
+  either: '💵/🔁 Cash or trade',
+  sell: '🫴 Selling to you (from your Buying list)',
+};
 
 function inquiryHtml(req: InquiryRequest): string {
   const items = req.itemIds
@@ -153,7 +159,7 @@ app.post('/api/inquiry', async (c) => {
   const ip = c.req.header('x-forwarded-for')?.split(',').pop()?.trim() || getConnInfo(c).remote.address || 'unknown';
   if (rateLimited(ip)) return c.json({ ok: false, error: 'Too many messages. Try again in a few minutes.' }, 429);
 
-  const intent: Intent = body.intent === 'cash' || body.intent === 'trade' ? body.intent : 'either';
+  const intent: Intent = body.intent === 'cash' || body.intent === 'trade' || body.intent === 'sell' ? body.intent : 'either';
   const req: InquiryRequest = {
     name: clip(body.name, 80),
     contact: clip(body.contact, 120),

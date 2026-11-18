@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import type { PublicCatalog, PublicItem } from '../shared/types.ts';
+import type { PublicCatalog, PublicItem, WantedItem } from '../shared/types.ts';
 import { BulkFlip } from './components/BulkFlip.tsx';
 import { CardModal } from './components/CardModal.tsx';
 import { PileButton, PileDrawer } from './components/Pile.tsx';
 import { Table } from './components/Table.tsx';
 import { Toolbar } from './components/Toolbar.tsx';
+import { WantedSign } from './components/WantedSign.tsx';
 import type { Filters } from './lib.ts';
 import { DEFAULT_FILTERS, Flip, gsap, isFiltering, loadCatalog, matches, reducedMotion, sortItems } from './lib.ts';
 import { usePile } from './usePile.ts';
@@ -16,6 +17,8 @@ export function App() {
   const [picked, setPicked] = useState<{ item: PublicItem; from: HTMLElement } | null>(null);
   const [bulkOpen, setBulkOpen] = useState(false);
   const [pileOpen, setPileOpen] = useState(false);
+  const [sell, setSell] = useState<{ message: string } | null>(null);
+  const wantedRef = useRef<HTMLElement>(null);
   const pile = usePile();
   const pileButton = useRef<HTMLButtonElement>(null);
   const flipState = useRef<Flip.FlipState | null>(null);
@@ -89,11 +92,21 @@ export function App() {
       .fromTo(target, { scale: 1.12 }, { scale: 1, duration: 0.35, ease: 'back.out(3)' }, '-=0.1');
   };
 
+  const haveOne = (w: WantedItem | null) => {
+    setSell({ message: w ? `Hi! I have: ${w.name}${w.detail ? ` (${w.detail})` : ''}\n\n` : '' });
+    setPileOpen(true);
+  };
+  const closeDrawer = () => {
+    setPileOpen(false);
+    setSell(null);
+  };
+
   if (error) return <div className="state-msg">{error}</div>;
   if (!catalog) return <div className="state-msg">Setting up the table…</div>;
 
   const site = catalog.site;
   const matching = items.filter(isMatch).length;
+  const wanted = catalog.wanted ?? [];
 
   return (
     <div className="hall">
@@ -105,6 +118,15 @@ export function App() {
           {site.tagline && <p>{site.tagline}</p>}
         </div>
         <div className="banner-actions">
+          {wanted.length > 0 && (
+            <button
+              type="button"
+              className="btn btn-ghost btn-buying"
+              onClick={() => wantedRef.current?.scrollIntoView({ behavior: reducedMotion() ? 'auto' : 'smooth', block: 'start' })}
+            >
+              We’re buying
+            </button>
+          )}
           <button type="button" className="btn btn-ghost" onClick={() => setPileOpen(true)}>
             Contact
           </button>
@@ -130,6 +152,7 @@ export function App() {
             tableName={site.name}
           />
         )}
+        {wanted.length > 0 && <WantedSign wanted={wanted} onHaveOne={haveOne} ref={wantedRef} />}
         <p className="footnote">
           Prices are for cash. Trades welcome on anything with a <span className="mini-trade">TRADE ✓</span> sticker. No
           online checkout: build a pile and send it over.
@@ -171,7 +194,8 @@ export function App() {
           tableName={site.name}
           onRemove={pile.remove}
           onClear={pile.clear}
-          onClose={() => setPileOpen(false)}
+          onClose={closeDrawer}
+          sell={sell}
         />
       )}
     </div>

@@ -2,7 +2,7 @@
 #  YOUR TABLE: the only file you need to edit.
 #
 #  After editing:  npm run sync   (pulls names, sets, images and market prices from TCGplayer)
-#  Then deploy:    ./deploy.sh
+#  Then deploy:    npm run deploy
 #
 #  Each item needs a TCGplayer product link. Everything else is optional:
 #    price:     your asking price. The site shows the HIGHER of this and the
@@ -18,6 +18,10 @@
 #    name / image: override what TCGplayer says
 #
 #  In the `bulk` list you can write just the link on its own line.
+#
+#  `wanted` is the BUYING sign. Each line is either plain text or a TCGplayer
+#  link (pulls the name and picture). Add `note:` for "NM only", "paying 80%"…
+#  Delete everything under it to take the sign down.
 # ─────────────────────────────────────────────────────────────────────────────
 
 site:
@@ -65,3 +69,31 @@ bulk:
     price: $1
   - url: https://www.tcgplayer.com/product/642612/pokemon-sv-black-bolt-excadrill-ex-160-086
     price: $1
+
+# Buying sign: what you're looking for. Placeholder examples: replace them.
+wanted:
+  singles:
+    - "Wailord - 169/159"
+    - "Xerneaas - 91/86"
+    - "Mimikyu Delta Species - SWSH136"
+    - "Snorlax Promo - SVP122"
+    - "Kingdra - TG03/TG30"
+    - "Rayquaza Promo - SWSH29"
+    - "Radiant Evee - SWSH230"
+    - name: "Cracked ice holos"
+      note: "Select cards, let me know what you have."
+    # - url: https://www.tcgplayer.com/product/123456/...
+    #   note: "Paying up to $40"
+  sealed:
+    - name: "30th Celebrations"
+      note: "All sealed product(no single)"
+    - name: "Delta Reign"
+      note: "All sealed product(no single)"
+    - name: "Ascended Heroes"
+      note: "Bundles, ETB, and Collection Boxes"
+    - name: "Prismatic Evolutions"
+      note: "Bundles, ETB, and Collection Boxes(no singles)"
+    - name: "Scarlet & Violet"
+      note: "All SVI sets"
+    - name: "Sword and Shield"
+      note: "Select SWSH sets"

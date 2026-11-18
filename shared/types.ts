@@ -40,10 +40,23 @@ export interface CatalogItem {
   lockPrice: boolean;
 }
 
+/** Something you're looking to buy (the "Buying" sign). */
+export interface WantedItem {
+  id: string;
+  kind: 'single' | 'sealed';
+  name: string;
+  /** Set · number, when we know it from TCGplayer. */
+  detail: string;
+  image: string;
+  tcgUrl: string;
+  note: string;
+}
+
 export interface Catalog {
   site: SiteInfo;
   syncedAt: string;
   items: CatalogItem[];
+  wanted: WantedItem[];
 }
 
 /** What the browser receives: one price, no breakdown. */
@@ -54,9 +67,11 @@ export type PublicItem = Omit<CatalogItem, 'myPrice' | 'marketPrice' | 'lockPric
 export interface PublicCatalog {
   site: SiteInfo;
   items: PublicItem[];
+  wanted: WantedItem[];
 }
 
-export type Intent = 'cash' | 'trade' | 'either';
+/** cash/trade/either: they want your stuff. sell: they have something you want. */
+export type Intent = 'cash' | 'trade' | 'either' | 'sell';
 
 export interface InquiryRequest {
   name: string;

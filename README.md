@@ -6,9 +6,11 @@ A Pokémon vendor table as a website. Sealed product stands on a shelf, singles 
 
 1. Edit **`inventory.yaml`**. Add a TCGplayer link per item, plus your price, condition, trade status and notes if you like. The comments at the top of the file explain every field.
 2. Run `npm run sync`. This pulls the name, set, number, rarity, image and market price from TCGplayer, and cuts the white background out of sealed-product photos.
-3. Run `./deploy.sh`.
+3. Run `npm run deploy` (builds, pushes and updates tcg.atomic10.studio).
 
 **Pricing:** each item shows one price, the higher of your `price` and the TCGplayer market price. The server re-checks market prices once a day, so the higher-of-the-two rule stays current between deploys. Add `lockPrice: true` to an item to always use your own price (for example, a played card).
+
+**Buying sign:** the `wanted:` section (with `singles:` and `sealed:` lists) fills the cardboard "Buying!" sign below the table. Each entry is plain text or a TCGplayer link (which pulls in the name and picture), with an optional `note:`. Visitors tap an entry to send you a "selling to you" message in Campfire. Empty the lists to take the sign down.
 
 ## Inquiries go to Campfire
 
@@ -48,7 +50,7 @@ once deploy ghcr.io/jameson13b/card-table:latest \
   --env CAMPFIRE_POST_URL='https://chat.atomic10.studio/rooms/<id>/<bot-key>/messages'
 ```
 
-After that, run `HOST=cards.example.com ./deploy.sh`.
+After that, just run `npm run deploy`. It updates tcg.atomic10.studio by default; use `HOST=other.example.com ./deploy.sh` for a different host.
 
 The container listens on :80, answers `/up` for ONCE's health check, and keeps its price cache in `/storage`.
 

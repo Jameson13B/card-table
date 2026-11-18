@@ -12,7 +12,7 @@ import { mkdir, readdir, readFile, unlink, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'yaml';
-import type { Catalog, CatalogItem, Section, SiteInfo, Status } from '../shared/types.ts';
+import type { Catalog, CatalogItem, Section, SiteInfo, Status, WantedItem } from '../shared/types.ts';
 import { IMAGE_URL, downloadTo, fetchDetails, productIdFromUrl, sleep, type TcgDetails } from '../server/tcg.ts';
 import { cutout } from './cutout.ts';
 
@@ -35,6 +35,7 @@ interface Inventory {
   sealed?: RawEntry[];
   showcase?: RawEntry[];
   bulk?: RawEntry[];
+  wanted?: { singles?: RawEntry[]; sealed?: RawEntry[] };
 }
 
 const STATUSES: Status[] = ['available', 'pending', 'sold'];
@@ -83,15 +84,8 @@ async function main() {
   const seen = new Map<number, number>();
   let fetched = 0;
 
-  for (const { section, raw, line } of entries) {
-    if (bool(raw.hide, false)) continue;
-    const productId = productIdFromUrl(line);
-    if (!productId) {
-      problems.push(`[${section}] no TCGplayer product id in: ${line || JSON.stringify(raw)}`);
-      continue;
-    }
-
-    // 1. Product details (cached).
+  /** Product details, from the cache unless stale. Problems are noted, not thrown. */
+  async function getDetails(productId: number, label: string): Promise<TcgDetails | undefined> {
     let details = cache[productId];
     const stale = !details || REFRESH || Date.now() - Date.parse(details.fetchedAt) > MAX_AGE_MS;
     if (stale && !OFFLINE) {
@@ -101,9 +95,22 @@ async function main() {
         cache[productId] = details;
         process.stdout.write(`  ok ${details.productName}\n`);
       } catch (err) {
-        problems.push(`[${section}] ${productId}: ${(err as Error).message}${details ? ' (using cached data)' : ''}`);
+        problems.push(`[${label}] ${productId}: ${(err as Error).message}${details ? ' (using cached data)' : ''}`);
       }
     }
+    return details;
+  }
+
+  for (const { section, raw, line } of entries) {
+    if (bool(raw.hide, false)) continue;
+    const productId = productIdFromUrl(line);
+    if (!productId) {
+      problems.push(`[${section}] no TCGplayer product id in: ${line || JSON.stringify(raw)}`);
+      continue;
+    }
+
+    // 1. Product details (cached).
+    const details = await getDetails(productId, section);
     if (!details && !raw.name) {
       problems.push(`[${section}] ${productId}: no data yet and no name override; skipped`);
       continue;
@@ -176,6 +183,46 @@ async function main() {
     });
   }
 
+  // The "Buying" sign: free text, or a TCGplayer link to pull the name and picture.
+  const wanted: WantedItem[] = [];
+  for (const kind of ['singles', 'sealed'] as const) {
+    for (const [n, e] of (inv.wanted?.[kind] ?? []).entries()) {
+      const raw = typeof e === 'string' ? (/^https?:/.test(e.trim()) ? { url: e } : { name: e }) : (e ?? {});
+      if (bool(raw.hide, false)) continue;
+      const url = str(raw.url);
+      const productId = url ? productIdFromUrl(url) : null;
+      if (url && !productId) problems.push(`[wanted] no TCGplayer product id in: ${url}`);
+      const details = productId ? await getDetails(productId, 'wanted') : undefined;
+      let image = '';
+      if (productId && details && !raw.image) {
+        const small = join(IMG_DIR, `${productId}_sm.jpg`);
+        if (!existsSync(small) && !OFFLINE) {
+          try {
+            await downloadTo(IMAGE_URL(productId, 'small'), small);
+          } catch (err) {
+            problems.push(`[wanted] ${productId}: ${(err as Error).message}`);
+          }
+        }
+        if (existsSync(small)) image = `/img/products/${productId}_sm.jpg`;
+      }
+      const number = details?.number ?? '';
+      const name = str(raw.name) || (details ? cleanName(details.productName, number) : '');
+      if (!name) {
+        problems.push(`[wanted] ${url || JSON.stringify(raw)}: no name yet; skipped`);
+        continue;
+      }
+      wanted.push({
+        id: `w-${kind}-${n}`,
+        kind: kind === 'singles' ? 'single' : 'sealed',
+        name,
+        detail: str(raw.detail, [details?.setName, number && `#${number}`].filter(Boolean).join(' · ')),
+        image: str(raw.image) || image,
+        tcgUrl: productId ? url : '',
+        note: str(raw.note ?? raw.notes),
+      });
+    }
+  }
+
   const catalog: Catalog = {
     site: {
       name: str(inv.site?.name, 'The Card Table'),
@@ -184,10 +231,16 @@ async function main() {
     },
     syncedAt: new Date().toISOString(),
     items,
+    wanted,
   };
 
   // Clean up after items that left the table: their images and cache entries.
   const used = new Set(items.map((i) => String(i.productId)));
+  for (const kind of ['singles', 'sealed'] as const)
+    for (const e of inv.wanted?.[kind] ?? []) {
+      const id = productIdFromUrl(typeof e === 'string' ? e : str(e?.url));
+      if (id) used.add(String(id));
+    }
   let pruned = 0;
   for (const file of await readdir(IMG_DIR)) {
     const m = /^(\d+)(_sm)?\.(jpg|webp)$/.exec(file);
@@ -203,7 +256,7 @@ async function main() {
   await writeFile(CATALOG, JSON.stringify(catalog, null, 2) + '\n');
 
   const by = (s: Section) => items.filter((i) => i.section === s).length;
-  console.log(`\nCatalog: ${items.length} items (sealed ${by('sealed')}, showcase ${by('showcase')}, bulk ${by('bulk')})`);
+  console.log(`\nCatalog: ${items.length} items (sealed ${by('sealed')}, showcase ${by('showcase')}, bulk ${by('bulk')}) · buying ${wanted.length}`);
   if (problems.length) {
     console.warn(`\n${problems.length} problem(s):\n  - ${problems.join('\n  - ')}`);
     if (args.has('--strict')) process.exit(1);
