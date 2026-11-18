@@ -46,6 +46,9 @@ showcase:
   - url: https://www.tcgplayer.com/product/694695/pokemon-me-mega-evolution-promo-fennekin-080-pokemon-center-exclusive
   - url: https://www.tcgplayer.com/product/694677/Pokemon-Miscellaneous%20Cards%20and%20Products-Delphox%20013%20086%20Chaos%20Rising%20Stamped
   - url: https://www.tcgplayer.com/product/610638/Pokemon-SV%20Prismatic%20Evolutions-Exeggutor%20Master%20Ball%20Pattern
+  - url: https://www.tcgplayer.com/product/704860/pokemon-me05-pitch-black-mega-excadrill-ex-103-084
+  - url: https://www.tcgplayer.com/product/704862/pokemon-me05-pitch-black-crushing-hammer
+  - url: https://www.tcgplayer.com/product/617115/one-piece-card-game-royal-blood-donquixote-doflamingo
 
 # Bulk box: the cheaper hits people flip through.
 bulk:
@@ -59,4 +62,6 @@ bulk:
     price: $1
     qty: 2
   - url: https://www.tcgplayer.com/product/696685/pokemon-me-30th-celebration-lycanroc-138-128
+    price: $1
+  - url: https://www.tcgplayer.com/product/642612/pokemon-sv-black-bolt-excadrill-ex-160-086
     price: $1

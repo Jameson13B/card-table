@@ -29,6 +29,20 @@
     "marketPrice": 46.53,
     "fetchedAt": "2026-11-18T17:28:36.524Z"
   },
+  "617115": {
+    "productId": 617115,
+    "productName": "Donquixote Doflamingo",
+    "setName": "Royal Blood",
+    "setCode": "OP10",
+    "number": "OP10-071",
+    "rarity": "Super Rare",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2025-03-21",
+    "energyType": [],
+    "marketPrice": 3.04,
+    "fetchedAt": "2026-11-18T18:34:54.253Z"
+  },
   "642279": {
     "productId": 642279,
     "productName": "Bouffalant ex - 162/086",
@@ -44,6 +58,22 @@
     ],
     "marketPrice": 0.75,
     "fetchedAt": "2026-11-18T17:52:00.892Z"
+  },
+  "642612": {
+    "productId": 642612,
+    "productName": "Excadrill ex - 160/086",
+    "setName": "SV: Black Bolt",
+    "setCode": "BLK",
+    "number": "160/086",
+    "rarity": "Ultra Rare",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2025-07-18",
+    "energyType": [
+      "Fighting"
+    ],
+    "marketPrice": 0.76,
+    "fetchedAt": "2026-11-18T18:34:55.619Z"
   },
   "676064": {
     "productId": 676064,
@@ -194,6 +224,36 @@
     "energyType": [],
     "marketPrice": 249.61,
     "fetchedAt": "2026-11-18T18:09:12.076Z"
+  },
+  "704860": {
+    "productId": 704860,
+    "productName": "Mega Excadrill ex - 103/084",
+    "setName": "ME05: Pitch Black",
+    "setCode": "PBL",
+    "number": "103/084",
+    "rarity": "Ultra Rare",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2026-07-17",
+    "energyType": [
+      "Metal"
+    ],
+    "marketPrice": 3.6,
+    "fetchedAt": "2026-11-18T18:34:51.714Z"
+  },
+  "704862": {
+    "productId": 704862,
+    "productName": "Crushing Hammer",
+    "setName": "ME05: Pitch Black",
+    "setCode": "PBL",
+    "number": "105/084",
+    "rarity": "Ultra Rare",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2026-07-17",
+    "energyType": [],
+    "marketPrice": 3.57,
+    "fetchedAt": "2026-11-18T18:34:53.123Z"
   },
   "705526": {
     "productId": 705526,
