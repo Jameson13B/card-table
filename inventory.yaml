@@ -1,0 +1,62 @@
+# ─────────────────────────────────────────────────────────────────────────────
+#  YOUR TABLE: the only file you need to edit.
+#
+#  After editing:  npm run sync   (pulls names, sets, images and market prices from TCGplayer)
+#  Then deploy:    ./deploy.sh
+#
+#  Each item needs a TCGplayer product link. Everything else is optional:
+#    price:     your asking price. The site shows the HIGHER of this and the
+#               TCGplayer market price. Leave it out to just use market.
+#    lockPrice: true  → always show your price, ignore the market (e.g. damaged cards)
+#    condition: NM, LP, MP, HP, DMG          (singles; default from `defaults`)
+#    graded:    "PSA 10", "CGC 9.5", …       (shows a slab instead of a toploader)
+#    trade:     true/false                   (shows the TRADE ✓ sticker)
+#    qty:       how many you have
+#    status:    available | pending | sold   (pending/sold get a sticker)
+#    hide:      true → keep it in the file but take it off the table
+#    notes:     shown when someone picks the card up
+#    name / image: override what TCGplayer says
+#
+#  In the `bulk` list you can write just the link on its own line.
+# ─────────────────────────────────────────────────────────────────────────────
+
+site:
+  name: "Neon Clubhouse TCG"            # placeholder: your table name
+  tagline: "Singles · Sealed · Trades welcome"
+  email: jamesonb@hey.com            # used for the "email me" buttons
+
+defaults:
+  condition: NM
+  trade: true
+  qty: 1
+
+# Sealed product: stands up on the back shelf.
+sealed:
+  - url: https://www.tcgplayer.com/product/684452/pokemon-me04-chaos-rising-chaos-rising-pokemon-center-elite-trainer-box
+  - url: https://www.tcgplayer.com/product/684456/pokemon-me04-chaos-rising-chaos-rising-booster-bundle
+  - url: https://www.tcgplayer.com/product/684458/pokemon-me04-chaos-rising-chaos-rising-3-pack-blister-charmeleon/
+  - url: https://www.tcgplayer.com/product/616305/Pokemon-Miscellaneous%20Cards%20and%20Products-Charizard%20ex%20Special%20Collection
+    qty: 2
+  - url: https://www.tcgplayer.com/product/704144/pokemon-me-30th-celebration-30th-celebration-pokemon-center-elite-trainer-box
+
+# Glass showcase: your display singles.
+showcase:
+  - url: https://www.tcgplayer.com/product/705528/pokemon-miscellaneous-cards-and-products-armarouge-whats-your-favorite-stamp
+  - url: https://www.tcgplayer.com/product/705526/pokemon-miscellaneous-cards-and-products-primarina-020-084-whats-your-favorite-stamp
+  - url: https://www.tcgplayer.com/product/694695/pokemon-me-mega-evolution-promo-fennekin-080-pokemon-center-exclusive
+  - url: https://www.tcgplayer.com/product/694677/Pokemon-Miscellaneous%20Cards%20and%20Products-Delphox%20013%20086%20Chaos%20Rising%20Stamped
+  - url: https://www.tcgplayer.com/product/610638/Pokemon-SV%20Prismatic%20Evolutions-Exeggutor%20Master%20Ball%20Pattern
+
+# Bulk box: the cheaper hits people flip through.
+bulk:
+  - url: https://www.tcgplayer.com/product/693554/pokemon-me04-chaos-rising-tool-scrapper
+    price: $1
+  - url: https://www.tcgplayer.com/product/642279/pokemon-sv-white-flare-bouffalant-ex-162-086
+    price: $1
+  - url: https://www.tcgplayer.com/product/676064/pokemon-me-ascended-heroes-stunfisk-ex-252-217
+    price: $1
+  - url: https://www.tcgplayer.com/product/684434/pokemon-me03-perfect-order-drapion-097-088
+    price: $1
+    qty: 2
+  - url: https://www.tcgplayer.com/product/696685/pokemon-me-30th-celebration-lycanroc-138-128
+    price: $1

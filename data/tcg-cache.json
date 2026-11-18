@@ -1,0 +1,230 @@
+{
+  "610638": {
+    "productId": 610638,
+    "productName": "Exeggutor (Master Ball Pattern)",
+    "setName": "SV: Prismatic Evolutions",
+    "setCode": "PRE",
+    "number": "002/131",
+    "rarity": "Uncommon",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2025-01-17",
+    "energyType": [
+      "Grass"
+    ],
+    "marketPrice": 9.93,
+    "fetchedAt": "2026-11-18T17:51:58.227Z"
+  },
+  "616305": {
+    "productId": 616305,
+    "productName": "Charizard ex Special Collection",
+    "setName": "Miscellaneous Cards & Products",
+    "setCode": "MCAP",
+    "number": "",
+    "rarity": "",
+    "productType": "Sealed Products",
+    "sealed": true,
+    "releaseDate": "",
+    "energyType": [],
+    "marketPrice": 46.53,
+    "fetchedAt": "2026-11-18T17:28:36.524Z"
+  },
+  "642279": {
+    "productId": 642279,
+    "productName": "Bouffalant ex - 162/086",
+    "setName": "SV: White Flare",
+    "setCode": "WHT",
+    "number": "162/086",
+    "rarity": "Ultra Rare",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2025-07-18",
+    "energyType": [
+      "Colorless"
+    ],
+    "marketPrice": 0.75,
+    "fetchedAt": "2026-11-18T17:52:00.892Z"
+  },
+  "676064": {
+    "productId": 676064,
+    "productName": "Stunfisk ex - 252/217",
+    "setName": "ME: Ascended Heroes",
+    "setCode": "ASC",
+    "number": "252/217",
+    "rarity": "Ultra Rare",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2026-01-30",
+    "energyType": [
+      "Fighting"
+    ],
+    "marketPrice": 0.81,
+    "fetchedAt": "2026-11-18T17:52:02.212Z"
+  },
+  "684434": {
+    "productId": 684434,
+    "productName": "Drapion - 097/088",
+    "setName": "ME03: Perfect Order",
+    "setCode": "POR",
+    "number": "097/088",
+    "rarity": "Illustration Rare",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2026-03-27",
+    "energyType": [
+      "Darkness"
+    ],
+    "marketPrice": 0.94,
+    "fetchedAt": "2026-11-18T17:52:03.556Z"
+  },
+  "684452": {
+    "productId": 684452,
+    "productName": "Chaos Rising Pokemon Center Elite Trainer Box",
+    "setName": "ME04: Chaos Rising",
+    "setCode": "CRI",
+    "number": "",
+    "rarity": "",
+    "productType": "Sealed Products",
+    "sealed": true,
+    "releaseDate": "2026-05-22",
+    "energyType": [],
+    "marketPrice": 112.24,
+    "fetchedAt": "2026-11-18T17:28:29.894Z"
+  },
+  "684456": {
+    "productId": 684456,
+    "productName": "Chaos Rising Booster Bundle",
+    "setName": "ME04: Chaos Rising",
+    "setCode": "CRI",
+    "number": "",
+    "rarity": "",
+    "productType": "Sealed Products",
+    "sealed": true,
+    "releaseDate": "2026-05-22",
+    "energyType": [],
+    "marketPrice": 37.42,
+    "fetchedAt": "2026-11-18T17:28:53.380Z"
+  },
+  "684458": {
+    "productId": 684458,
+    "productName": "Chaos Rising 3-Pack Blister [Charmeleon]",
+    "setName": "ME04: Chaos Rising",
+    "setCode": "CRI",
+    "number": "",
+    "rarity": "",
+    "productType": "Sealed Products",
+    "sealed": true,
+    "releaseDate": "2026-05-22",
+    "energyType": [],
+    "marketPrice": 21.62,
+    "fetchedAt": "2026-11-18T17:28:33.896Z"
+  },
+  "693554": {
+    "productId": 693554,
+    "productName": "Tool Scrapper",
+    "setName": "ME04: Chaos Rising",
+    "setCode": "CRI",
+    "number": "115/086",
+    "rarity": "Ultra Rare",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2026-05-22",
+    "energyType": [],
+    "marketPrice": 0.83,
+    "fetchedAt": "2026-11-18T17:51:59.588Z"
+  },
+  "694677": {
+    "productId": 694677,
+    "productName": "Delphox - 013/086 (Chaos Rising Stamped)",
+    "setName": "Miscellaneous Cards & Products",
+    "setCode": "MCAP",
+    "number": "013/086",
+    "rarity": "Rare",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "",
+    "energyType": [
+      "Fire"
+    ],
+    "marketPrice": 11.43,
+    "fetchedAt": "2026-11-18T17:51:56.455Z"
+  },
+  "694695": {
+    "productId": 694695,
+    "productName": "Fennekin - 080 (Pokemon Center Exclusive)",
+    "setName": "ME: Mega Evolution Promo",
+    "setCode": "MEP",
+    "number": "080",
+    "rarity": "Promo",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2025-09-26",
+    "energyType": [
+      "Fire"
+    ],
+    "marketPrice": 26.58,
+    "fetchedAt": "2026-11-18T17:52:22.738Z"
+  },
+  "696685": {
+    "productId": 696685,
+    "productName": "Lycanroc - 138/128",
+    "setName": "ME: 30th Celebration",
+    "setCode": "30C",
+    "number": "138/128",
+    "rarity": "Illustration Rare",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2026-09-16",
+    "energyType": [
+      "Fighting"
+    ],
+    "marketPrice": 1.04,
+    "fetchedAt": "2026-11-18T17:56:18.535Z"
+  },
+  "704144": {
+    "productId": 704144,
+    "productName": "30th Celebration Pokemon Center Elite Trainer Box",
+    "setName": "ME: 30th Celebration",
+    "setCode": "30C",
+    "number": "",
+    "rarity": "",
+    "productType": "Sealed Products",
+    "sealed": true,
+    "releaseDate": "2026-09-16",
+    "energyType": [],
+    "marketPrice": 249.61,
+    "fetchedAt": "2026-11-18T18:09:12.076Z"
+  },
+  "705526": {
+    "productId": 705526,
+    "productName": "Primarina - 020/084 (What's Your Favorite Stamp)",
+    "setName": "Miscellaneous Cards & Products",
+    "setCode": "MCAP",
+    "number": "020/084",
+    "rarity": "Rare",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "",
+    "energyType": [
+      "Water"
+    ],
+    "marketPrice": 45.41,
+    "fetchedAt": "2026-11-18T17:51:53.139Z"
+  },
+  "705528": {
+    "productId": 705528,
+    "productName": "Armarouge (What's Your Favorite Stamp)",
+    "setName": "Miscellaneous Cards & Products",
+    "setCode": "MCAP",
+    "number": "012/084",
+    "rarity": "Rare",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "",
+    "energyType": [
+      "Fire"
+    ],
+    "marketPrice": 74.89,
+    "fetchedAt": "2026-11-18T17:51:51.480Z"
+  }
+}
