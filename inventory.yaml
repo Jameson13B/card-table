@@ -42,6 +42,7 @@ sealed:
   - url: https://www.tcgplayer.com/product/616305/Pokemon-Miscellaneous%20Cards%20and%20Products-Charizard%20ex%20Special%20Collection
     qty: 2
   - url: https://www.tcgplayer.com/product/704144/pokemon-me-30th-celebration-30th-celebration-pokemon-center-elite-trainer-box
+  - url: https://www.tcplayer.com/product/616303/pokemon-miscellaneous-cards-and-products-hops-zacian-ex-box
 
 # Glass showcase: your display singles.
 showcase:
@@ -53,6 +54,12 @@ showcase:
   - url: https://www.tcgplayer.com/product/704860/pokemon-me05-pitch-black-mega-excadrill-ex-103-084
   - url: https://www.tcgplayer.com/product/704862/pokemon-me05-pitch-black-crushing-hammer
   - url: https://www.tcgplayer.com/product/617115/one-piece-card-game-royal-blood-donquixote-doflamingo
+  - url: https://www.tcgplayer.com/product/696608/pokemon-me-mega-evolution-promo-mega-gengar-ex-073
+  - url: https://www.tcgplayer.com/product/675937/Pokemon-ME%20Ascended%20Heroes-Mega%20Gengar%20ex%20125%20217
+  - url: https://www.tcgplayer.com/product/665897/pokemon-japan-m2a-high-class-pack-mega-dream-ex-mega-eelektross-ex-225-193
+  - url: https://www.tcgplayer.com/product/571227/pokemon-japan-s4a-shiny-star-v-rillaboom-v-304-190
+  - url: https://www.tcgplayer.com/product/693509/pokemon-me04-chaos-rising-mega-dragalge-ex-104-086
+  - url: https://www.tcgplayer.com/product/704857/pokemon-me05-pitch-black-rampardos-ex-100-084
 
 # Bulk box: the cheaper hits people flip through.
 bulk:
@@ -74,7 +81,7 @@ bulk:
 wanted:
   singles:
     - "Wailord - 169/159"
-    - "Xerneaas - 91/86"
+    - "Xerneas - 91/86"
     - "Mimikyu Delta Species - SWSH136"
     - "Snorlax Promo - SVP122"
     - "Kingdra - TG03/TG30"

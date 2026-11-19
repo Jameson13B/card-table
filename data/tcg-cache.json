@@ -1,4 +1,18 @@
 {
+  "571227": {
+    "productId": 571227,
+    "productName": "Rillaboom V - 304/190",
+    "setName": "S4a: Shiny Star V",
+    "setCode": "S4a",
+    "number": "304/190",
+    "rarity": "Shiny Secret Rare",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2020-11-20",
+    "energyType": [],
+    "marketPrice": 1.8,
+    "fetchedAt": "2026-11-18T23:56:02.484Z"
+  },
   "610638": {
     "productId": 610638,
     "productName": "Exeggutor (Master Ball Pattern)",
@@ -14,6 +28,20 @@
     ],
     "marketPrice": 9.93,
     "fetchedAt": "2026-11-18T17:51:58.227Z"
+  },
+  "616303": {
+    "productId": 616303,
+    "productName": "Hop's Zacian ex Box",
+    "setName": "Miscellaneous Cards & Products",
+    "setCode": "MCAP",
+    "number": "",
+    "rarity": "",
+    "productType": "Sealed Products",
+    "sealed": true,
+    "releaseDate": "",
+    "energyType": [],
+    "marketPrice": 31.57,
+    "fetchedAt": "2026-11-19T00:02:52.421Z"
   },
   "616305": {
     "productId": 616305,
@@ -74,6 +102,36 @@
     ],
     "marketPrice": 0.76,
     "fetchedAt": "2026-11-18T18:34:55.619Z"
+  },
+  "665897": {
+    "productId": 665897,
+    "productName": "Mega Eelektross ex - 225/193",
+    "setName": "M2a: High Class Pack: MEGA Dream ex",
+    "setCode": "M2a",
+    "number": "225/193",
+    "rarity": "Mega Attack Rare",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2025-11-28",
+    "energyType": [],
+    "marketPrice": 2,
+    "fetchedAt": "2026-11-18T23:56:01.162Z"
+  },
+  "675937": {
+    "productId": 675937,
+    "productName": "Mega Gengar ex - 125/217",
+    "setName": "ME: Ascended Heroes",
+    "setCode": "ASC",
+    "number": "125/217",
+    "rarity": "Double Rare",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2026-01-30",
+    "energyType": [
+      "Darkness"
+    ],
+    "marketPrice": 2.25,
+    "fetchedAt": "2026-11-18T23:55:59.753Z"
   },
   "676064": {
     "productId": 676064,
@@ -149,6 +207,22 @@
     "marketPrice": 21.62,
     "fetchedAt": "2026-11-18T17:28:33.896Z"
   },
+  "693509": {
+    "productId": 693509,
+    "productName": "Mega Dragalge ex - 104/086",
+    "setName": "ME04: Chaos Rising",
+    "setCode": "CRI",
+    "number": "104/086",
+    "rarity": "Ultra Rare",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2026-05-22",
+    "energyType": [
+      "Dragon"
+    ],
+    "marketPrice": 1.94,
+    "fetchedAt": "2026-11-18T23:56:03.920Z"
+  },
   "693554": {
     "productId": 693554,
     "productName": "Tool Scrapper",
@@ -195,6 +269,22 @@
     "marketPrice": 26.58,
     "fetchedAt": "2026-11-18T17:52:22.738Z"
   },
+  "696608": {
+    "productId": 696608,
+    "productName": "Mega Gengar ex - 073",
+    "setName": "ME: Mega Evolution Promo",
+    "setCode": "MEP",
+    "number": "073",
+    "rarity": "Promo",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2025-09-26",
+    "energyType": [
+      "Darkness"
+    ],
+    "marketPrice": 2.97,
+    "fetchedAt": "2026-11-18T23:55:58.113Z"
+  },
   "696685": {
     "productId": 696685,
     "productName": "Lycanroc - 138/128",
@@ -224,6 +314,22 @@
     "energyType": [],
     "marketPrice": 249.61,
     "fetchedAt": "2026-11-18T18:09:12.076Z"
+  },
+  "704857": {
+    "productId": 704857,
+    "productName": "Rampardos ex - 100/084",
+    "setName": "ME05: Pitch Black",
+    "setCode": "PBL",
+    "number": "100/084",
+    "rarity": "Ultra Rare",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2026-07-17",
+    "energyType": [
+      "Fighting"
+    ],
+    "marketPrice": 2.41,
+    "fetchedAt": "2026-11-18T23:56:05.241Z"
   },
   "704860": {
     "productId": 704860,
