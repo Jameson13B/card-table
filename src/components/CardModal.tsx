@@ -48,8 +48,11 @@ export function CardModal({ item, from, inPile, email, tableName, onAdd, onRemov
         0,
       );
     }
+    // revert(), not kill(): kill leaves the from() start state (shrunk card,
+    // hidden details) on the elements, so React StrictMode's dev re-run then
+    // animated from hidden to hidden and the card stayed tiny with no details.
     return () => {
-      tl.kill();
+      tl.revert();
     };
   }, [from]);
 

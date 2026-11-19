@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "sync": "node scripts/sync-tcg.ts",
-    "dev": "concurrently -k -n api,web -c yellow,cyan \"PORT=8787 STORAGE_DIR=.storage node --watch server/index.ts\" \"vite\"",
+    "dev": "concurrently -k -n api,web -c yellow,cyan \"PORT=8787 STORAGE_DIR=.storage node --watch-path=server --watch-path=shared --watch-path=data server/index.ts\" \"vite\"",
     "build": "tsc -b && vite build",
     "start": "node server/index.ts",
     "typecheck": "tsc -b",

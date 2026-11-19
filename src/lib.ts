@@ -67,7 +67,7 @@ export function mailtoHref(email: string, items: PublicItem[], tableName: string
 // ── Filters ──────────────────────────────────────────────────────────────
 export type Kind = 'all' | 'sealed' | 'singles';
 export type PriceBand = 'any' | 'u25' | '25-100' | '100+';
-export type Sort = 'featured' | 'price-desc' | 'price-asc' | 'newest';
+export type Sort = 'featured' | 'price-desc' | 'price-asc' | 'newest' | 'traded';
 
 export interface Filters {
   q: string;
@@ -111,6 +111,7 @@ export function sortItems(items: PublicItem[], sort: Sort, isMatch?: (i: PublicI
     'price-desc': (a, b) => (b.price ?? -1) - (a.price ?? -1),
     'price-asc': (a, b) => (a.price ?? Infinity) - (b.price ?? Infinity),
     newest: (a, b) => b.releaseDate.localeCompare(a.releaseDate),
+    traded: (a, b) => (b.sellers ?? -1) - (a.sellers ?? -1),
   };
   return out.sort((a, b) => miss(a) - miss(b) || sold(a) - sold(b) || by[sort](a, b));
 }

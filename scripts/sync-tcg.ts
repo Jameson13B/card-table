@@ -74,8 +74,8 @@ async function main() {
   const entries: { section: Section; raw: Record<string, unknown>; line: string }[] = [];
   for (const section of ['sealed', 'showcase', 'bulk'] as const) {
     for (const e of inv[section] ?? []) {
-      const raw = typeof e === 'string' ? { url: e } : (e ?? {});
-      entries.push({ section, raw, line: str(raw.url) });
+      const raw = typeof e === 'string' || typeof e === 'number' ? { url: e } : (e ?? {});
+      entries.push({ section, raw, line: str(raw.url ?? raw.id) });
     }
   }
 
@@ -87,7 +87,7 @@ async function main() {
   /** Product details, from the cache unless stale. Problems are noted, not thrown. */
   async function getDetails(productId: number, label: string): Promise<TcgDetails | undefined> {
     let details = cache[productId];
-    const stale = !details || REFRESH || Date.now() - Date.parse(details.fetchedAt) > MAX_AGE_MS;
+    const stale = !details || REFRESH || details.sellers === undefined || Date.now() - Date.parse(details.fetchedAt) > MAX_AGE_MS;
     if (stale && !OFFLINE) {
       try {
         if (fetched++) await sleep(1000);
@@ -168,6 +168,7 @@ async function main() {
       productType: details?.productType ?? '',
       sealed,
       releaseDate: details?.releaseDate ?? '',
+      sellers: details?.sellers ?? null,
       energyType: details?.energyType ?? [],
       image: str(raw.image) || `/img/products/${productId}.${ext}`,
       imageSmall: str(raw.image) || `/img/products/${productId}_sm.${ext}`,
@@ -187,9 +188,12 @@ async function main() {
   const wanted: WantedItem[] = [];
   for (const kind of ['singles', 'sealed'] as const) {
     for (const [n, e] of (inv.wanted?.[kind] ?? []).entries()) {
-      const raw = typeof e === 'string' ? (/^https?:/.test(e.trim()) ? { url: e } : { name: e }) : (e ?? {});
+      const raw =
+        typeof e === 'number' ? { url: e }
+        : typeof e === 'string' ? (/^https?:/.test(e.trim()) ? { url: e } : { name: e })
+        : (e ?? {});
       if (bool(raw.hide, false)) continue;
-      const url = str(raw.url);
+      const url = str(raw.url ?? raw.id);
       const productId = url ? productIdFromUrl(url) : null;
       if (url && !productId) problems.push(`[wanted] no TCGplayer product id in: ${url}`);
       const details = productId ? await getDetails(productId, 'wanted') : undefined;
@@ -217,7 +221,7 @@ async function main() {
         name,
         detail: str(raw.detail, [details?.setName, number && `#${number}`].filter(Boolean).join(' · ')),
         image: str(raw.image) || image,
-        tcgUrl: productId ? url : '',
+        tcgUrl: productId ? (url.startsWith('http') ? url : `https://www.tcgplayer.com/product/${productId}`) : '',
         note: str(raw.note ?? raw.notes),
       });
     }

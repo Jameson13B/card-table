@@ -209,11 +209,39 @@ img {
   border-radius: 50%;
   background: radial-gradient(circle, #2a1a14 35%, #d9d4cc 40%, #8e877d 70%);
 }
-.grommet:first-of-type {
+.grommet:first-child {
   left: 12px;
 }
-.grommet:last-of-type {
+.grommet + .grommet {
   right: 12px;
+}
+/* Area-code nod: a faded ink stamp in the banner corner, easy to miss on purpose. */
+.stamp-801 {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2px 5px 1px;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: #fff;
+  opacity: 0.3;
+  transform: rotate(-6deg);
+  pointer-events: none;
+}
+.stamp-801 small {
+  margin-bottom: 1px;
+  font-family: var(--font);
+  font-size: 0.4rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 .banner-actions {
   position: absolute;

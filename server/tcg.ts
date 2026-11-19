@@ -19,6 +19,8 @@ export interface TcgDetails {
   releaseDate: string;
   energyType: string[];
   marketPrice: number | null;
+  /** How many sellers list it: a rough "how much it trades" signal, not true popularity. */
+  sellers: number | null;
   fetchedAt: string;
 }
 
@@ -46,6 +48,7 @@ export async function fetchDetails(id: number): Promise<TcgDetails> {
     releaseDate: String(attrs.releaseDate ?? '').slice(0, 10),
     energyType: Array.isArray(attrs.energyType) ? attrs.energyType.map(String) : [],
     marketPrice: typeof d.marketPrice === 'number' && d.marketPrice > 0 ? d.marketPrice : null,
+    sellers: typeof d.sellers === 'number' ? d.sellers : null,
     fetchedAt: new Date().toISOString(),
   };
 }

@@ -116,6 +116,10 @@ export function App() {
           <span className="grommet" aria-hidden />
           <h1>{site.name}</h1>
           {site.tagline && <p>{site.tagline}</p>}
+          <span className="stamp-801" title="Utah local">
+            <small>Local</small>
+            801
+          </span>
         </div>
         <div className="banner-actions">
           {wanted.length > 0 && (

@@ -23,6 +23,8 @@ export interface CatalogItem {
   productType: string;
   sealed: boolean;
   releaseDate: string;
+  /** TCGplayer seller count, used for the "Most traded" sort. */
+  sellers: number | null;
   energyType: string[];
   image: string;
   imageSmall: string;

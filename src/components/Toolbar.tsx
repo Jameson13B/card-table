@@ -66,6 +66,7 @@ export function Toolbar({ filters, onChange, matching, total }: Props) {
           <option value="price-desc">Price: high → low</option>
           <option value="price-asc">Price: low → high</option>
           <option value="newest">Newest sets</option>
+          <option value="traded">Most traded</option>
         </select>
       </label>
 
