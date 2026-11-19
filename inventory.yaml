@@ -36,46 +36,65 @@ defaults:
 
 # Sealed product: stands up on the back shelf.
 sealed:
-  - url: https://www.tcgplayer.com/product/684452/pokemon-me04-chaos-rising-chaos-rising-pokemon-center-elite-trainer-box
-  - url: https://www.tcgplayer.com/product/684456/pokemon-me04-chaos-rising-chaos-rising-booster-bundle
-  - url: https://www.tcgplayer.com/product/684458/pokemon-me04-chaos-rising-chaos-rising-3-pack-blister-charmeleon/
-  - url: https://www.tcgplayer.com/product/616305/Pokemon-Miscellaneous%20Cards%20and%20Products-Charizard%20ex%20Special%20Collection
+  - id: 704144
+  - id: 684452
+    price: 115
+  - id: 593355
+  - id: 692947
+    price: 70
+  - id: 616305    
     qty: 2
-  - url: https://www.tcgplayer.com/product/704144/pokemon-me-30th-celebration-30th-celebration-pokemon-center-elite-trainer-box
-  - url: https://www.tcgplayer.com/product/616303/pokemon-miscellaneous-cards-and-products-hops-zacian-ex-box
+    price: 50
+  - id: 616303
+  - id: 684456
+    price: 40
+  - id: 684458
+  - id: 686437
+  - id: 686438
 
 # Glass showcase: your display singles.
 showcase:
-  - url: https://www.tcgplayer.com/product/705528/pokemon-miscellaneous-cards-and-products-armarouge-whats-your-favorite-stamp
-  - url: https://www.tcgplayer.com/product/705526/pokemon-miscellaneous-cards-and-products-primarina-020-084-whats-your-favorite-stamp
-  - url: https://www.tcgplayer.com/product/694695/pokemon-me-mega-evolution-promo-fennekin-080-pokemon-center-exclusive
-  - url: https://www.tcgplayer.com/product/694677/Pokemon-Miscellaneous%20Cards%20and%20Products-Delphox%20013%20086%20Chaos%20Rising%20Stamped
-  - url: https://www.tcgplayer.com/product/610638/Pokemon-SV%20Prismatic%20Evolutions-Exeggutor%20Master%20Ball%20Pattern
-  - url: https://www.tcgplayer.com/product/704860/pokemon-me05-pitch-black-mega-excadrill-ex-103-084
-  - url: https://www.tcgplayer.com/product/704862/pokemon-me05-pitch-black-crushing-hammer
-  - url: https://www.tcgplayer.com/product/617115/one-piece-card-game-royal-blood-donquixote-doflamingo
-  - url: https://www.tcgplayer.com/product/696608/pokemon-me-mega-evolution-promo-mega-gengar-ex-073
-  - url: https://www.tcgplayer.com/product/675937/Pokemon-ME%20Ascended%20Heroes-Mega%20Gengar%20ex%20125%20217
-  - url: https://www.tcgplayer.com/product/665897/pokemon-japan-m2a-high-class-pack-mega-dream-ex-mega-eelektross-ex-225-193
-  - url: https://www.tcgplayer.com/product/571227/pokemon-japan-s4a-shiny-star-v-rillaboom-v-304-190
-  - url: https://www.tcgplayer.com/product/693509/pokemon-me04-chaos-rising-mega-dragalge-ex-104-086
-  - url: https://www.tcgplayer.com/product/704857/pokemon-me05-pitch-black-rampardos-ex-100-084
+  - id: 705528
+  - id: 705526
+  - id: 694695
+  - id: 694677
+  - id: 610638
+  - id: 704860
+  - id: 704862
+  - id: 617115
+  - id: 696608
+  - id: 675937
+  - id: 665897
+  - id: 571227
+  - id: 693509
+  - id: 704857
+  - id: 571590
+    graded: "AGS 10"
+    price: 25
+    notes: "Make me an offer!"
 
 # Bulk box: the cheaper hits people flip through.
 bulk:
-  - url: https://www.tcgplayer.com/product/693554/pokemon-me04-chaos-rising-tool-scrapper
+  - id: 693554
     price: $1
-  - url: https://www.tcgplayer.com/product/642279/pokemon-sv-white-flare-bouffalant-ex-162-086
+  - id: 642279
     price: $1
-  - url: https://www.tcgplayer.com/product/676064/pokemon-me-ascended-heroes-stunfisk-ex-252-217
+  - id: 676064
     price: $1
-  - url: https://www.tcgplayer.com/product/684434/pokemon-me03-perfect-order-drapion-097-088
+  - id: 684434
     price: $1
     qty: 2
-  - url: https://www.tcgplayer.com/product/696685/pokemon-me-30th-celebration-lycanroc-138-128
+  - id: 696685
     price: $1
-  - url: https://www.tcgplayer.com/product/642612/pokemon-sv-black-bolt-excadrill-ex-160-086
+  - id: 642612
     price: $1
+  - id: 693469
+    qty: 2
+  - id: 693498
+    qty: 2
+  - id: 693560
+  - id: 642278
+  - id: 644835
 
 # Buying sign: what you're looking for. Placeholder examples: replace them.
 wanted:
@@ -89,8 +108,6 @@ wanted:
     - "Radiant Evee - SWSH230"
     - name: "Cracked ice holos"
       note: "Select cards, let me know what you have."
-    # - url: https://www.tcgplayer.com/product/123456/...
-    #   note: "Paying up to $40"
   sealed:
     - name: "30th Celebrations"
       note: "All sealed product(no single)"

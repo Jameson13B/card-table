@@ -11,7 +11,38 @@
     "releaseDate": "2020-11-20",
     "energyType": [],
     "marketPrice": 1.8,
-    "fetchedAt": "2026-11-18T23:56:02.484Z"
+    "sellers": 35,
+    "fetchedAt": "2026-11-19T07:09:19.094Z"
+  },
+  "571590": {
+    "productId": 571590,
+    "productName": "Mew - 052/172",
+    "setName": "S12a: VSTAR Universe",
+    "setCode": "S12a",
+    "number": "052/172",
+    "rarity": "None",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2022-12-02",
+    "energyType": [],
+    "marketPrice": 1.5808,
+    "sellers": 72,
+    "fetchedAt": "2026-11-19T07:09:22.381Z"
+  },
+  "593355": {
+    "productId": 593355,
+    "productName": "Prismatic Evolutions Elite Trainer Box",
+    "setName": "SV: Prismatic Evolutions",
+    "setCode": "PRE",
+    "number": "",
+    "rarity": "",
+    "productType": "Sealed Products",
+    "sealed": true,
+    "releaseDate": "2025-01-17",
+    "energyType": [],
+    "marketPrice": 113.03,
+    "sellers": 304,
+    "fetchedAt": "2026-11-19T07:08:59.296Z"
   },
   "610638": {
     "productId": 610638,
@@ -27,7 +58,8 @@
       "Grass"
     ],
     "marketPrice": 9.93,
-    "fetchedAt": "2026-11-18T17:51:58.227Z"
+    "sellers": 89,
+    "fetchedAt": "2026-11-19T07:09:11.415Z"
   },
   "616303": {
     "productId": 616303,
@@ -41,7 +73,8 @@
     "releaseDate": "",
     "energyType": [],
     "marketPrice": 31.57,
-    "fetchedAt": "2026-11-19T00:02:52.421Z"
+    "sellers": 72,
+    "fetchedAt": "2026-11-19T07:09:03.671Z"
   },
   "616305": {
     "productId": 616305,
@@ -54,8 +87,9 @@
     "sealed": true,
     "releaseDate": "",
     "energyType": [],
-    "marketPrice": 46.53,
-    "fetchedAt": "2026-11-18T17:28:36.524Z"
+    "marketPrice": 43.76,
+    "sellers": 126,
+    "fetchedAt": "2026-11-19T07:09:00.389Z"
   },
   "617115": {
     "productId": 617115,
@@ -68,8 +102,26 @@
     "sealed": false,
     "releaseDate": "2025-03-21",
     "energyType": [],
-    "marketPrice": 3.04,
-    "fetchedAt": "2026-11-18T18:34:54.253Z"
+    "marketPrice": 2.96,
+    "sellers": 110,
+    "fetchedAt": "2026-11-19T07:09:14.711Z"
+  },
+  "642278": {
+    "productId": 642278,
+    "productName": "Hydreigon ex - 161/086",
+    "setName": "SV: White Flare",
+    "setCode": "WHT",
+    "number": "161/086",
+    "rarity": "Ultra Rare",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2025-07-18",
+    "energyType": [
+      "Darkness"
+    ],
+    "marketPrice": 1.03,
+    "sellers": 534,
+    "fetchedAt": "2026-11-19T07:34:50.642Z"
   },
   "642279": {
     "productId": 642279,
@@ -84,8 +136,9 @@
     "energyType": [
       "Colorless"
     ],
-    "marketPrice": 0.75,
-    "fetchedAt": "2026-11-18T17:52:00.892Z"
+    "marketPrice": 0.74,
+    "sellers": 567,
+    "fetchedAt": "2026-11-19T07:09:24.571Z"
   },
   "642612": {
     "productId": 642612,
@@ -100,8 +153,26 @@
     "energyType": [
       "Fighting"
     ],
-    "marketPrice": 0.76,
-    "fetchedAt": "2026-11-18T18:34:55.619Z"
+    "marketPrice": 0.75,
+    "sellers": 593,
+    "fetchedAt": "2026-11-19T07:09:28.980Z"
+  },
+  "644835": {
+    "productId": 644835,
+    "productName": "Tornadus - 210",
+    "setName": "SV: Scarlet & Violet Promo Cards",
+    "setCode": "SVP",
+    "number": "210",
+    "rarity": "Promo",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2023-03-31",
+    "energyType": [
+      "Colorless"
+    ],
+    "marketPrice": 1.14,
+    "sellers": 651,
+    "fetchedAt": "2026-11-19T07:34:52.051Z"
   },
   "665897": {
     "productId": 665897,
@@ -114,8 +185,9 @@
     "sealed": false,
     "releaseDate": "2025-11-28",
     "energyType": [],
-    "marketPrice": 2,
-    "fetchedAt": "2026-11-18T23:56:01.162Z"
+    "marketPrice": 1.98,
+    "sellers": 160,
+    "fetchedAt": "2026-11-19T07:09:17.997Z"
   },
   "675937": {
     "productId": 675937,
@@ -130,8 +202,9 @@
     "energyType": [
       "Darkness"
     ],
-    "marketPrice": 2.25,
-    "fetchedAt": "2026-11-18T23:55:59.753Z"
+    "marketPrice": 2.26,
+    "sellers": 542,
+    "fetchedAt": "2026-11-19T07:09:16.898Z"
   },
   "676064": {
     "productId": 676064,
@@ -146,8 +219,9 @@
     "energyType": [
       "Fighting"
     ],
-    "marketPrice": 0.81,
-    "fetchedAt": "2026-11-18T17:52:02.212Z"
+    "marketPrice": 0.7728,
+    "sellers": 842,
+    "fetchedAt": "2026-11-19T07:09:25.675Z"
   },
   "684434": {
     "productId": 684434,
@@ -162,8 +236,9 @@
     "energyType": [
       "Darkness"
     ],
-    "marketPrice": 0.94,
-    "fetchedAt": "2026-11-18T17:52:03.556Z"
+    "marketPrice": 1.0036,
+    "sellers": 993,
+    "fetchedAt": "2026-11-19T07:09:26.777Z"
   },
   "684452": {
     "productId": 684452,
@@ -176,8 +251,9 @@
     "sealed": true,
     "releaseDate": "2026-05-22",
     "energyType": [],
-    "marketPrice": 112.24,
-    "fetchedAt": "2026-11-18T17:28:29.894Z"
+    "marketPrice": 111.76,
+    "sellers": 179,
+    "fetchedAt": "2026-11-19T07:08:57.096Z"
   },
   "684456": {
     "productId": 684456,
@@ -190,8 +266,9 @@
     "sealed": true,
     "releaseDate": "2026-05-22",
     "energyType": [],
-    "marketPrice": 37.42,
-    "fetchedAt": "2026-11-18T17:28:53.380Z"
+    "marketPrice": 36.79,
+    "sellers": 283,
+    "fetchedAt": "2026-11-19T07:09:01.486Z"
   },
   "684458": {
     "productId": 684458,
@@ -205,7 +282,87 @@
     "releaseDate": "2026-05-22",
     "energyType": [],
     "marketPrice": 21.62,
-    "fetchedAt": "2026-11-18T17:28:33.896Z"
+    "sellers": 91,
+    "fetchedAt": "2026-11-19T07:09:02.580Z"
+  },
+  "686437": {
+    "productId": 686437,
+    "productName": "Mega Moonlit Tin [Mega Gengar ex]",
+    "setName": "Miscellaneous Cards & Products",
+    "setCode": "MCAP",
+    "number": "",
+    "rarity": "",
+    "productType": "Sealed Products",
+    "sealed": true,
+    "releaseDate": "",
+    "energyType": [],
+    "marketPrice": 32.43,
+    "sellers": 104,
+    "fetchedAt": "2026-11-19T07:09:04.774Z"
+  },
+  "686438": {
+    "productId": 686438,
+    "productName": "Mega Moonlit Tin [Mega Clefable ex]",
+    "setName": "Miscellaneous Cards & Products",
+    "setCode": "MCAP",
+    "number": "",
+    "rarity": "",
+    "productType": "Sealed Products",
+    "sealed": true,
+    "releaseDate": "",
+    "energyType": [],
+    "marketPrice": 27.32,
+    "sellers": 88,
+    "fetchedAt": "2026-11-19T07:09:05.863Z"
+  },
+  "692947": {
+    "productId": 692947,
+    "productName": "Pitch Black Elite Trainer Box",
+    "setName": "ME05: Pitch Black",
+    "setCode": "PBL",
+    "number": "",
+    "rarity": "",
+    "productType": "Sealed Products",
+    "sealed": true,
+    "releaseDate": "2026-07-17",
+    "energyType": [],
+    "marketPrice": 66.41,
+    "sellers": 229,
+    "fetchedAt": "2026-11-19T07:10:44.528Z"
+  },
+  "693469": {
+    "productId": 693469,
+    "productName": "Cobalion ex - 103/086",
+    "setName": "ME04: Chaos Rising",
+    "setCode": "CRI",
+    "number": "103/086",
+    "rarity": "Ultra Rare",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2026-05-22",
+    "energyType": [
+      "Metal"
+    ],
+    "marketPrice": 1.26,
+    "sellers": 791,
+    "fetchedAt": "2026-11-19T07:19:27.030Z"
+  },
+  "693498": {
+    "productId": 693498,
+    "productName": "Gourgeist ex - 102/086",
+    "setName": "ME04: Chaos Rising",
+    "setCode": "CRI",
+    "number": "102/086",
+    "rarity": "Ultra Rare",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2026-05-22",
+    "energyType": [
+      "Psychic"
+    ],
+    "marketPrice": 1.14,
+    "sellers": 883,
+    "fetchedAt": "2026-11-19T07:19:28.656Z"
   },
   "693509": {
     "productId": 693509,
@@ -220,8 +377,9 @@
     "energyType": [
       "Dragon"
     ],
-    "marketPrice": 1.94,
-    "fetchedAt": "2026-11-18T23:56:03.920Z"
+    "marketPrice": 2.21,
+    "sellers": 746,
+    "fetchedAt": "2026-11-19T07:09:20.183Z"
   },
   "693554": {
     "productId": 693554,
@@ -234,8 +392,26 @@
     "sealed": false,
     "releaseDate": "2026-05-22",
     "energyType": [],
-    "marketPrice": 0.83,
-    "fetchedAt": "2026-11-18T17:51:59.588Z"
+    "marketPrice": 0.8012,
+    "sellers": 805,
+    "fetchedAt": "2026-11-19T07:09:23.480Z"
+  },
+  "693560": {
+    "productId": 693560,
+    "productName": "Watchog - 097/086",
+    "setName": "ME04: Chaos Rising",
+    "setCode": "CRI",
+    "number": "097/086",
+    "rarity": "Illustration Rare",
+    "productType": "Cards",
+    "sealed": false,
+    "releaseDate": "2026-05-22",
+    "energyType": [
+      "Colorless"
+    ],
+    "marketPrice": 1.12,
+    "sellers": 1044,
+    "fetchedAt": "2026-11-19T07:19:29.999Z"
   },
   "694677": {
     "productId": 694677,
@@ -250,8 +426,9 @@
     "energyType": [
       "Fire"
     ],
-    "marketPrice": 11.43,
-    "fetchedAt": "2026-11-18T17:51:56.455Z"
+    "marketPrice": 11.57,
+    "sellers": 61,
+    "fetchedAt": "2026-11-19T07:09:10.305Z"
   },
   "694695": {
     "productId": 694695,
@@ -266,8 +443,9 @@
     "energyType": [
       "Fire"
     ],
-    "marketPrice": 26.58,
-    "fetchedAt": "2026-11-18T17:52:22.738Z"
+    "marketPrice": 26.3,
+    "sellers": 185,
+    "fetchedAt": "2026-11-19T07:09:09.213Z"
   },
   "696608": {
     "productId": 696608,
@@ -282,8 +460,9 @@
     "energyType": [
       "Darkness"
     ],
-    "marketPrice": 2.97,
-    "fetchedAt": "2026-11-18T23:55:58.113Z"
+    "marketPrice": 2.78,
+    "sellers": 495,
+    "fetchedAt": "2026-11-19T07:09:15.800Z"
   },
   "696685": {
     "productId": 696685,
@@ -298,8 +477,9 @@
     "energyType": [
       "Fighting"
     ],
-    "marketPrice": 1.04,
-    "fetchedAt": "2026-11-18T17:56:18.535Z"
+    "marketPrice": 1.0192,
+    "sellers": 909,
+    "fetchedAt": "2026-11-19T07:09:27.879Z"
   },
   "704144": {
     "productId": 704144,
@@ -312,8 +492,9 @@
     "sealed": true,
     "releaseDate": "2026-09-16",
     "energyType": [],
-    "marketPrice": 249.61,
-    "fetchedAt": "2026-11-18T18:09:12.076Z"
+    "marketPrice": 249.62,
+    "sellers": 154,
+    "fetchedAt": "2026-11-19T07:08:58.205Z"
   },
   "704857": {
     "productId": 704857,
@@ -328,8 +509,9 @@
     "energyType": [
       "Fighting"
     ],
-    "marketPrice": 2.41,
-    "fetchedAt": "2026-11-18T23:56:05.241Z"
+    "marketPrice": 2.38,
+    "sellers": 460,
+    "fetchedAt": "2026-11-19T07:09:21.285Z"
   },
   "704860": {
     "productId": 704860,
@@ -344,8 +526,9 @@
     "energyType": [
       "Metal"
     ],
-    "marketPrice": 3.6,
-    "fetchedAt": "2026-11-18T18:34:51.714Z"
+    "marketPrice": 3.56,
+    "sellers": 525,
+    "fetchedAt": "2026-11-19T07:09:12.519Z"
   },
   "704862": {
     "productId": 704862,
@@ -358,8 +541,9 @@
     "sealed": false,
     "releaseDate": "2026-07-17",
     "energyType": [],
-    "marketPrice": 3.57,
-    "fetchedAt": "2026-11-18T18:34:53.123Z"
+    "marketPrice": 3.66,
+    "sellers": 436,
+    "fetchedAt": "2026-11-19T07:09:13.608Z"
   },
   "705526": {
     "productId": 705526,
@@ -374,8 +558,9 @@
     "energyType": [
       "Water"
     ],
-    "marketPrice": 45.41,
-    "fetchedAt": "2026-11-18T17:51:53.139Z"
+    "marketPrice": 45.51,
+    "sellers": 33,
+    "fetchedAt": "2026-11-19T07:09:08.112Z"
   },
   "705528": {
     "productId": 705528,
@@ -390,7 +575,8 @@
     "energyType": [
       "Fire"
     ],
-    "marketPrice": 74.89,
-    "fetchedAt": "2026-11-18T17:51:51.480Z"
+    "marketPrice": 74.88,
+    "sellers": 14,
+    "fetchedAt": "2026-11-19T07:09:07.001Z"
   }
 }
